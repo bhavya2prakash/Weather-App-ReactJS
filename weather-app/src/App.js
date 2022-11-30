@@ -45,7 +45,7 @@ var a = new Date();
         var day2 = weekdays[a.getDay()+1];
         var day3 = weekdays[a.getDay()+2];
         var day4 = weekdays[a.getDay()+3];
-        var day5 = weekdays[a.getDay()+4];
+        var day5 = weekdays[a.getDay()+4>6?0:a.getDay()+4];
         
 var days=  1;
 // var day1= new Date().getDay().toLocaleString('en-us', {weekday:'long'});
@@ -105,7 +105,7 @@ console.log(day1,day2,day3,day4,day5)
       <Route exact path = {'/'+day2} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+1)}/>}></Route>
       <Route exact path = {'/'+day3} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+2)}/>}></Route>
       <Route exact path ={'/'+day4} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+3)}/>}></Route>
-      <Route exact path = {'/'+day5} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+4)}/>}></Route>
+      <Route exact path = {'/'+day5} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+4>6?0:a.getDay()+4)}/>}></Route>
       
       </Routes>
       </Router>  

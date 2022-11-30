@@ -27,12 +27,15 @@ function HourlyWeather(props) {
     <h1>Hourly Forecast</h1>
     {
     props.hourlydata?props.hourlydata.map((hour,i) =>  { 
+        let houricon= `http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`
        if(rex(hour.dt_txt)==props.day){    
         return <div className='hour'>
-            
+        {console.log(hour.weather[0].icon)}
             <ul>
-                <li> Date & Time :{date(hour.dt_txt)}</li>
-                <li>Temparature :{hour.main.temp} Fahrenheit</li>
+                <li>Time : {date(hour.dt_txt)}</li>
+                <li><img src = {houricon}/></li>
+                <li>Max Temp :{hour.main.temp_max} Fahrenheit</li>
+                <li>Min Temp :{hour.main.temp_min} Fahrenheit</li>
             </ul>
     
         </div>

@@ -5,7 +5,7 @@ import HourlyWeather from './HourlyWeather';
 function DailyWeather({dateNum, dayIcon, tempHigh, tempLow,days,hourlydata }) {
    
     dateNum = new Date(dateNum * 1000)
-    var x=dateNum.getDay();
+    var x=(dateNum.getMonth()+1) + "/" + dateNum.getDate() + "/" + dateNum.getFullYear();
     dateNum.getDay();
     let options = { weekday: 'short'}
     dateNum = Intl.DateTimeFormat('en-US', options).format(dateNum)
@@ -15,6 +15,7 @@ function DailyWeather({dateNum, dayIcon, tempHigh, tempLow,days,hourlydata }) {
           <div className="day">
             <img src={dayIcon} />
             <h2>{dateNum}</h2>
+            <h2>{x}</h2>
             <div className="temp-container">
                 <h2 className="temp-high">Max Temp :{tempHigh.toString().slice(0,2)}&#x2109;</h2>
                 <h2 className="temp-low">Mix Temp :{tempLow.toString().slice(0,2)}&#x2109;</h2>
