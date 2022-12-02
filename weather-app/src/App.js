@@ -121,7 +121,7 @@ var days=  1;
                 </Link>
                 <Routes>
                 
-      <Route exact path = {'/'+day1} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d1}/>}></Route>
+      <Route exact path = {'/'+day1} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d1.getDay()}/>}></Route>
       <Route exact path = {'/'+day2} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d2}/>}></Route>
       <Route exact path = {'/'+day3} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d3}/>}></Route>
       <Route exact path ={'/'+day4} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d4}/>}></Route>
