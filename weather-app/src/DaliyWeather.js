@@ -19,7 +19,9 @@ function DailyWeather({dateNum, dayIcon, tempHigh, tempLow,days,hourlydata }) {
             <div className="temp-container">
                 <h2 className="temp-high">Max Temp :{tempHigh.toString().slice(0,2)}&#x2109;</h2>
                 <h2 className="temp-low">Mix Temp :{tempLow.toString().slice(0,2)}&#x2109;</h2>
+
             </div>
+
             {/* <Router>
             <Link to={'/'+dateNum+'Day'+days}>
                   <button type="button">
@@ -39,6 +41,7 @@ function DailyWeather({dateNum, dayIcon, tempHigh, tempLow,days,hourlydata }) {
                
                 
           </div>
+          
       </div>
   )
 }

@@ -32,7 +32,20 @@ function App() {
         console.log(error);
     })       
 }, [])
+function changeDate(a){
+
+ a.setDate(a.getDate() + 1);
+ return a.getDay();
+
+}
+var d1 = new Date();
 var a = new Date();
+// var d1= changeDate(a);
+var d2= changeDate(a);
+var d3= changeDate(a);
+var d4= changeDate(a);
+var d5= changeDate(a);
+console.log(d1,d2,d3,d4,d5)
         var weekdays = new Array(7);
         weekdays[0] = "Sunday";
         weekdays[1] = "Monday";
@@ -41,17 +54,24 @@ var a = new Date();
         weekdays[4] = "Thursday";
         weekdays[5] = "Friday";
         weekdays[6] = "Saturday";
-        var day1 = weekdays[a.getDay()];
-        var day2 = weekdays[a.getDay()+1];
-        var day3 = weekdays[a.getDay()+2];
-        var day4 = weekdays[a.getDay()+3];
-        var day5 = weekdays[a.getDay()+4>6?0:a.getDay()+4];
+        var day1 = weekdays[d1.getDay()];
+        
+       
+        var day2 = weekdays[d2];
+        
+        var day3 = weekdays[d3];
+       
+        var day4 = weekdays[d4];
+        
+        var day5 = weekdays[d5];
+        
         
 var days=  1;
+
 // var day1= new Date().getDay().toLocaleString('en-us', {weekday:'long'});
 // // let options = { weekday: 'short'}
 // // day1 = Intl.DateTimeFormat('en-US', options).format(day1)
-console.log(day1,day2,day3,day4,day5)
+
 
   return (
     <div className="App">
@@ -101,11 +121,11 @@ console.log(day1,day2,day3,day4,day5)
                 </Link>
                 <Routes>
                 
-      <Route exact path = {'/'+day1} element = {<HourlyWeather hourlydata={weatherHourlyData} day={a.getDay()}/>}></Route>
-      <Route exact path = {'/'+day2} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+1)}/>}></Route>
-      <Route exact path = {'/'+day3} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+2)}/>}></Route>
-      <Route exact path ={'/'+day4} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+3)}/>}></Route>
-      <Route exact path = {'/'+day5} element = {<HourlyWeather hourlydata={weatherHourlyData} day={(a.getDay()+4>6?0:a.getDay()+4)}/>}></Route>
+      <Route exact path = {'/'+day1} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d1}/>}></Route>
+      <Route exact path = {'/'+day2} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d2}/>}></Route>
+      <Route exact path = {'/'+day3} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d3}/>}></Route>
+      <Route exact path ={'/'+day4} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d4}/>}></Route>
+      <Route exact path = {'/'+day5} element = {<HourlyWeather hourlydata={weatherHourlyData} day={d5}/>}></Route>
       
       </Routes>
       </Router>  
